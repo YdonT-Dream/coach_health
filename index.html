@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>健康症狀與風險初步篩查</title>
+    <title>健康症狀與生活習慣初步篩查</title>
     <style>
         body { font-family: -apple-system, sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; background: #f4f7f6; color: #333; }
         .box { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .coach-zone { background: #eef2f7; border: 2px dashed #3498db; }
-        .title { font-weight: bold; margin-bottom: 12px; font-size: 1.05rem; }
+        .title { font-weight: bold; margin-bottom: 12px; font-size: 1.05rem; color: #2c3e50; }
         .input-group { margin-bottom: 10px; }
         .input-group label { display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold; }
         input[type="text"], input[type="email"] { width: 95%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
@@ -17,6 +17,7 @@
         .btn-green { background: #2ecc71; font-size: 1.1rem; }
         .btn-whatsapp { background: #25D366; font-size: 1.1rem; margin-top: 15px; }
         .btn-email { background: #ea4335; font-size: 1.1rem; margin-top: 10px; }
+        .section-header { font-size: 1.2rem; font-weight: bold; color: #2980b9; margin: 30px 0 15px 0; padding-bottom: 5px; border-bottom: 2px solid #2980b9; }
         #result { margin-top: 25px; padding: 25px; border-radius: 8px; display: none; text-align: center; }
         .status-good { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
         .status-alert { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
@@ -29,7 +30,7 @@
 
     <div id="coachSection" class="box coach-zone">
         <h3 style="margin-top:0; color:#2c3e50;">👨‍🏫 教練/營養顧問 專屬設定區</h3>
-        <p style="font-size:0.85rem; color:#666;">請在此輸入您的聯絡資料，生成專屬連結發送給學員。學員填完後能一鍵聯絡您。</p>
+        <p style="font-size:0.85rem; color:#666;">請在此輸入您的聯絡資料，生成專屬連結發送給學員。學員填完後能一鍵聯絡您並帶出詳細報告。</p>
         <div class="input-group">
             <label>教練 WhatsApp 電話 (例如: 85291234567)</label>
             <input type="text" id="coachPhone" placeholder="香港號碼請連同 852，不要留空格">
@@ -46,11 +47,14 @@
     </div>
 
     <h2>📊 健康症狀與風險初步篩查</h2>
-    <p style="color:#666; font-size:0.9rem;">請根據你過去一個月的真實身體狀況作答。本問卷僅供初步健康管理參考。</p>
+    <p style="color:#666; font-size:0.9rem;">請根據你真實的身體與生活狀況作答。本問卷僅供初步健康管理與教練評估參考。</p>
 
     <form id="surveyForm">
+        
+        <div class="section-header">第一部分：微量營養素與蛋白質</div>
+        
         <div class="box">
-            <div class="title" id="title_b">1. 經常無精神、好攰、容易生飛滋？(維他命 B)</div>
+            <div class="title">1. 經常無精神、好攰、容易生飛滋？(維他命 B)</div>
             <div class="radio-group">
                 <input type="radio" name="b" value="0" checked> 從未/極少 | 
                 <input type="radio" name="b" value="1"> 有時 | 
@@ -59,7 +63,7 @@
         </div>
 
         <div class="box">
-            <div class="title" id="title_c">2. 刷牙牙肉易出血、皮膚易有瘀青？(維他命 C)</div>
+            <div class="title">2. 刷牙牙肉易出血、皮膚易有瘀青？(維他命 C)</div>
             <div class="radio-group">
                 <input type="radio" name="c" value="0" checked> 從未/極少 | 
                 <input type="radio" name="c" value="1"> 有時 | 
@@ -68,7 +72,7 @@
         </div>
 
         <div class="box">
-            <div class="title" id="title_d">3. 少曬太陽、肌肉無力、心情易抑鬱？(維他命 D)</div>
+            <div class="title">3. 少曬太陽、肌肉無力、心情易抑鬱？(維他命 D)</div>
             <div class="radio-group">
                 <input type="radio" name="d" value="0" checked> 從未/極少 | 
                 <input type="radio" name="d" value="1"> 有時 | 
@@ -77,7 +81,7 @@
         </div>
 
         <div class="box">
-            <div class="title" id="title_cal">4. 瞓覺或運動時小腿容易抽筋？(鈣質)</div>
+            <div class="title">4. 瞓覺或運動時小腿容易抽筋？(鈣質)</div>
             <div class="radio-group">
                 <input type="radio" name="cal" value="0" checked> 從未/極少 | 
                 <input type="radio" name="cal" value="1"> 有時 | 
@@ -86,7 +90,7 @@
         </div>
 
         <div class="box">
-            <div class="title" id="title_mg">5. 難入睡、睡眠質素差、眼皮不自主跳動？(鎂質)</div>
+            <div class="title">5. 難入睡、睡眠質素差、眼皮不自主跳動？(鎂質)</div>
             <div class="radio-group">
                 <input type="radio" name="mg" value="0" checked> 從未/極少 | 
                 <input type="radio" name="mg" value="1"> 有時 | 
@@ -95,7 +99,7 @@
         </div>
 
         <div class="box">
-            <div class="title" id="title_zn">6. 指甲易斷、多倒刺、掉頭髮變多？(鋅質)</div>
+            <div class="title">6. 指甲易斷、多倒刺、掉頭髮變多？(鋅質)</div>
             <div class="radio-group">
                 <input type="radio" name="zn" value="0" checked> 從未/極少 | 
                 <input type="radio" name="zn" value="1"> 有時 | 
@@ -104,7 +108,7 @@
         </div>
 
         <div class="box">
-            <div class="title" id="title_pro">7. 少肉少蛋奶、肌肉流失、傷口癒合慢？(蛋白質)</div>
+            <div class="title">7. 少肉少蛋奶、肌肉流失、傷口癒合慢？(蛋白質)</div>
             <div class="radio-group">
                 <input type="radio" name="pro" value="0" checked> 唔符合 | 
                 <input type="radio" name="pro" value="1"> 部分符合 | 
@@ -112,8 +116,10 @@
             </div>
         </div>
 
+        <div class="section-header">第二部分：三高前期慢性風險</div>
+
         <div class="box">
-            <div class="title" id="title_bp">8. 經常後腦發脹頭暈，或直系親屬有高血壓？(高血壓風險)</div>
+            <div class="title">8. 經常後腦發脹頭暈，或直系親屬有高血壓？(高血壓風險)</div>
             <div class="radio-group">
                 <input type="radio" name="bp" value="0" checked> 無 | 
                 <input type="radio" name="bp" value="1"> 有其中一樣 | 
@@ -122,7 +128,7 @@
         </div>
 
         <div class="box">
-            <div class="title" id="title_chol">9. 經常多油炸外賣，或眼瞼有黃色脂肪瘤？(高膽固醇風險)</div>
+            <div class="title">9. 經常多油炸外賣，或眼瞼有黃色脂肪瘤？(高膽固醇風險)</div>
             <div class="radio-group">
                 <input type="radio" name="chol" value="0" checked> 無 | 
                 <input type="radio" name="chol" value="1"> 飲食不健康 | 
@@ -131,11 +137,102 @@
         </div>
 
         <div class="box">
-            <div class="title" id="title_dia">10. 經常口乾、尿頻、體重突降或有糖尿病家族史？(糖尿前期風險)</div>
+            <div class="title">10. 經常口乾、尿頻、體重突降或有糖尿病家族史？(糖尿前期風險)</div>
             <div class="radio-group">
                 <input type="radio" name="dia" value="0" checked> 無症狀 | 
                 <input type="radio" name="dia" value="1"> 輕微/有家族史 | 
                 <input type="radio" name="dia" value="2"> 症狀明顯
+            </div>
+        </div>
+
+        <div class="section-header">第三部分：飲食與生活習慣調查 (新加入)</div>
+
+        <div class="box">
+            <div class="title">11. 您會容易疲勞嗎？您會經常容易生病嗎？</div>
+            <div class="radio-group">
+                <input type="radio" name="img_fatigue" value="0" checked> 唔會 | 
+                <input type="radio" name="img_fatigue" value="1"> 有時會 | 
+                <input type="radio" name="img_fatigue" value="2"> 經常會
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">12. 您有長期的健康問題，例如頭痛，背痛，便秘嗎？</div>
+            <div class="radio-group">
+                <input type="radio" name="img_chronic" value="0" checked> 沒有 | 
+                <input type="radio" name="img_chronic" value="1"> 有其中一兩樣 | 
+                <input type="radio" name="img_chronic" value="2"> 困擾已久/全有
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">13. 您會經常覺得肚餓，對食物渴望嗎？</div>
+            <div class="radio-group">
+                <input type="radio" name="img_hunger" value="0" checked> 唔會，胃口正常 | 
+                <input type="radio" name="img_hunger" value="1"> 偶爾會想食零食 | 
+                <input type="radio" name="img_hunger" value="2"> 經常控制唔到食慾
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">14. 您會經常食快餐，速食食物嗎？</div>
+            <div class="radio-group">
+                <input type="radio" name="img_fastfood" value="0" checked> 很少食 | 
+                <input type="radio" name="img_fastfood" value="1"> 一星期 1-3 次 | 
+                <input type="radio" name="img_fastfood" value="2"> 幾乎每日都食
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">15. 您相信您進食的食物和你的健康有直接關係嗎？</div>
+            <div class="radio-group">
+                <input type="radio" name="img_belief" value="0" checked> 相信 | 
+                <input type="radio" name="img_belief" value="1"> 不太確定 | 
+                <input type="radio" name="img_belief" value="2"> 不相信
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">16. 您每天至少飲到 8 杯水嗎？</div>
+            <div class="radio-group">
+                <input type="radio" name="img_water" value="0" checked> 係，飲足水 | 
+                <input type="radio" name="img_water" value="1"> 差不多/視乎情況 | 
+                <input type="radio" name="img_water" value="2"> 唔夠，好少飲水
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">17. 曾經有醫生建議過您減肥嗎？(BMI)</div>
+            <div class="radio-group">
+                <input type="radio" name="img_bmi" value="0" checked> 沒有 | 
+                <input type="radio" name="img_bmi" value="2"> 有醫生建議過
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">18. 您希望減肥，減寸，或增重嗎？</div>
+            <div class="radio-group">
+                <input type="radio" name="img_goal" value="0" checked> 維持現狀即可 | 
+                <input type="radio" name="img_goal" value="1"> 希望減肥/減寸 | 
+                <input type="radio" name="img_goal" value="2"> 希望增重/增肌
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">19. 您有吸煙，飲酒的習慣嗎？</div>
+            <div class="radio-group">
+                <input type="radio" name="img_habit" value="0" checked> 都沒有 | 
+                <input type="radio" name="img_habit" value="1"> 偶爾社交飲酒 | 
+                <input type="radio" name="img_habit" value="2"> 有吸煙或定期飲酒
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">20. 你感到有工作，生活，家庭的壓力嗎？</div>
+            <div class="radio-group">
+                <input type="radio" name="img_stress" value="0" checked> 壓力很少/可以應付 | 
+                <input type="radio" name="img_stress" value="1"> 有中度壓力 | 
+                <input type="radio" name="img_stress" value="2"> 壓力非常大
             </div>
         </div>
 
@@ -146,15 +243,15 @@
         <div id="statusResult"></div>
         
         <p style="margin-top:20px; font-weight:bold; color:#555;">💡 想要獲取專屬飲食改善建議？請即聯繫您的指導教練：</p>
-        <button id="whatsappBtn" class="btn btn-whatsapp" onclick="contactCoach('whatsapp')">💬 透過 WhatsApp 發送結果給教練</button>
-        <button id="emailBtn" class="btn btn-email" onclick="contactCoach('email')">✉️ 透過 電郵 發送結果給教練</button>
+        <button id="whatsappBtn" class="btn btn-whatsapp" onclick="contactCoach('whatsapp')">💬 透過 WhatsApp 發送報告給教練</button>
+        <button id="emailBtn" class="btn btn-email" onclick="contactCoach('email')">✉️ 透過 電郵 發送報告給教練</button>
     </div>
 
 <script>
     let cPhone = "";
     let cEmail = "";
     let globalStatusText = "";
-    let alertDetails = ""; // 用來儲存學員具體有問題的項目文字
+    let alertDetails = "";
 
     window.onload = function() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -178,56 +275,78 @@
     }
 
     function checkHealth() {
-        // 定義對應題目與簡稱
+        // 包含原本 10 題與新增的 10 題
         const topics = [
             { id: 'b', label: '維他命 B 群 (疲勞/飛滋)' },
             { id: 'c', label: '維他命 C (牙肉出血/瘀青)' },
-            { id: 'd', label: '維他命 D (少曬/肌肉無力/情緒沉重)' },
+            { id: 'd', label: '維他命 D (少曬/肌肉無力/情緒)' },
             { id: 'cal', label: '鈣質 (抽筋/手指微震)' },
             { id: 'mg', label: '鎂質 (睡眠差/眼皮跳)' },
             { id: 'zn', label: '鋅質 (指甲易斷/掉髮)' },
             { id: 'pro', label: '蛋白質 (少肉/傷口慢/肌肉流失)' },
             { id: 'bp', label: '高血壓風險 (頭暈脹/家族史)' },
-            { id: 'chol', label: '高膽固醇風險 (油炸偏好/黃斑瘤)' },
-            { id: 'dia', label: '糖尿前期風險 (口乾尿頻/家族史)' }
+            { id: 'chol', label: '高膽固醇風險 (油炸/黃斑瘤)' },
+            { id: 'dia', label: '糖尿前期風險 (口乾尿頻/家族史)' },
+            // 新加入對應
+            { id: 'img_fatigue', label: '容易疲勞/生病狀況' },
+            { id: 'img_chronic', label: '長期健康問題 (頭痛/背痛/便秘)' },
+            { id: 'img_hunger', label: '經常飢餓/對食物渴望' },
+            { id: 'img_fastfood', label: '進食快餐/速食頻率' },
+            { id: 'img_belief', label: '對「食物影響健康」的觀念' },
+            { id: 'img_water', label: '每日飲水量狀況 (少於8杯)' },
+            { id: 'img_bmi', label: '曾受醫生建議減肥 (BMI)' },
+            { id: 'img_goal', label: '身材管理目標 (減重/增重)' },
+            { id: 'img_habit', label: '吸煙/飲酒生活習慣' },
+            { id: 'img_stress', label: '工作/生活/家庭壓力狀況' }
         ];
 
         let hasShortageOrRisk = false;
         let detailsArray = [];
 
-        // 循環檢查每一題
         for (let t of topics) {
             let radio = document.querySelector(`input[name="${t.id}"]:checked`);
+            if(!radio) continue;
             let val = parseInt(radio.value);
             
+            // 特別處理第 15 題（信念）和 18 題（目標），只要有填就顯示給教練看
+            if (t.id === 'img_belief' || t.id === 'img_goal') {
+                let txt = radio.parentElement.innerText.trim();
+                detailsArray.push(`- ${t.label}: 【${txt}】`);
+                continue;
+            }
+
+            // 其他題目若大於 0 表示有潛在缺乏或需要關注
             if (val > 0) {
-                hasShortageOrRisk = true;
-                let level = (val === 1) ? "【中風險/有時】" : "【高風險/經常】";
-                detailsArray.push(`- ${t.label}: ${level}`);
+                if(t.id !== 'bp' && t.id !== 'chol' && t.id !== 'dia' && !t.id.startsWith('img_')) {
+                    hasShortageOrRisk = true; // 觸發微量營養素缺乏警報
+                }
+                let txt = radio.parentElement.innerText.trim();
+                detailsArray.push(`- ${t.label}: 【${txt}】`);
             }
         }
 
         const resultDiv = document.getElementById('result');
         const statusResult = document.getElementById('statusResult');
 
+        // 用網頁前端依然只顯示兩種最乾淨的情況
         if (!hasShortageOrRisk) {
-            globalStatusText = "身體並沒有營養素缺乏或慢性病前期風險的情況";
-            alertDetails = "所有篩查項目均表現良好。";
+            globalStatusText = "身體並無明顯微量營養素缺乏的情況";
             resultDiv.className = "box status-good";
             statusResult.innerHTML = `
                 <div class="status-title">🟢 篩查結果：良好</div>
-                <p>根據目前的自我審視，您的**身體並沒有營養素缺乏或慢性病前期風險的情況**。請繼續保持良好的飲食與生活習慣！</p>
+                <p>根據目前的自我審視，您的**身體並沒有明顯的營養素缺乏情況**。請繼續保持良好的飲食與生活習慣！</p>
             `;
         } else {
-            globalStatusText = "身體有營養素缺乏或存在慢性病前期的潛在風險";
-            // 將陣列組合，每個項目換一行（使用 \n 用於通訊軟體）
-            alertDetails = "有潛在風險的項目如下：\n" + detailsArray.join("\n");
+            globalStatusText = "身體有營養素缺乏或存在生活形態改善的空間";
             resultDiv.className = "box status-alert";
             statusResult.innerHTML = `
                 <div class="status-title">🔴 篩查結果：需多加留意</div>
-                <p>根據目前的症狀勾選，您的**身體有營養素缺乏或存在慢性病前期的潛在風險**。建議尋求專業顧問為您調整膳食。</p>
+                <p>根據目前的症狀勾選，您的**身體可能有某些微量營養素缺乏或有生活形態改善空間**。建議尋求專業顧問為您優化膳食。</p>
             `;
         }
+
+        // 組合詳細資料給通訊軟體
+        alertDetails = detailsArray.length > 0 ? "學員勾選的重點狀況如下：\n" + detailsArray.join("\n") : "學員所有項目均無勾選異常。";
 
         document.getElementById('whatsappBtn').style.display = cPhone ? 'block' : 'none';
         document.getElementById('emailBtn').style.display = cEmail ? 'block' : 'none';
@@ -241,8 +360,7 @@
     }
 
     function contactCoach(method) {
-        // 建立發送給教練的訊息範本，自動換行並包含學員填寫的詳細狀況
-        const messageText = `你好，我剛剛完成了健康篩查問卷。\n\n【總體結論】：${globalStatusText}\n\n【詳細症狀分析】：\n${alertDetails}\n\n想向你諮詢相關的飲食與營養改善建議，謝謝！`;
+        const messageText = `你好，我剛剛完成了健康篩查問卷。\n\n【總體結論】：${globalStatusText}\n\n【詳細生活與症狀分析】：\n${alertDetails}\n\n想向你諮詢相關的健康與營養改善建議，謝謝！`;
         
         if (method === 'whatsapp') {
             if (!cPhone) { alert("此連結未設定教練 WhatsApp 電話。"); return; }
